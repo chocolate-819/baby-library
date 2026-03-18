@@ -1,0 +1,7 @@
+[phases.setup]
+
+[phases.build]
+cmd = "pnpm install && pnpm run build"
+
+[phases.start]
+cmd = "node dist/index.js"

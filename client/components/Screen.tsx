@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import {
   Platform,
   StyleSheet,
@@ -10,6 +10,7 @@ import {
   FlatList,
   SectionList,
   Modal,
+  Dimensions,
 } from 'react-native';
 import { useSafeAreaInsets, Edge } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
@@ -197,9 +198,16 @@ export const Screen = ({
   // 强制禁用 iOS 自动调整内容区域，完全由手动 padding 控制，消除系统自动计算带来的多余空白
   const contentInsetBehaviorIOS = 'never';
 
+  // Web 端响应式：获取屏幕宽度
+  const screenWidth = useMemo(() => Dimensions.get('window').width, []);
+
   const wrapperStyle: ViewStyle = {
     flex: 1,
     backgroundColor,
+    // Web 端居中布局 + 最大宽度限制
+    ...(Platform.OS === 'web' && {
+      alignItems: 'center',
+    }),
     paddingTop: hasTop ? insets.top : 0,
     paddingLeft: hasLeft ? insets.left : 0,
     paddingRight: hasRight ? insets.right : 0,
@@ -208,6 +216,13 @@ export const Screen = ({
       ? (keyboardShown ? 0 : insets.bottom)
       : 0,
   };
+
+  // Web 端内容容器样式（限制最大宽度）
+  const webContentWrapperStyle: ViewStyle = Platform.OS === 'web' ? {
+    width: '100%',
+    maxWidth: Math.min(screenWidth, 768), // 最大宽度 768px（iPad 尺寸）
+    flex: 1,
+  } : {};
 
   // 若子树不可滚动，则外层使用 KeyboardAwareScrollView 提供“全局页面滑动”能力
   const useScrollContainer = !childIsNativeScrollable;
@@ -280,27 +295,30 @@ export const Screen = ({
         translucent
       />
 
-      {/* 键盘避让：仅当外层使用 ScrollView 时启用，避免固定底部栏随键盘上移 */}
-      {useScrollContainer ? (
-         // 替换为 KeyboardAwareScrollView，移除原先的 KeyboardAvoidingView 包裹
-         // 因为 KeyboardAwareScrollView 已经内置了处理逻辑
-        <Container style={[styles.innerContainer, style]} {...containerProps}>
-          {children}
-        </Container>
-      ) : (
-        // 页面自身已处理滚动，不启用全局键盘避让，保证固定底部栏不随键盘上移
-        childIsNativeScrollable ? (
-          <View style={[styles.innerContainer, style]}>
-            {wrapScrollableWithKeyboardAvoid(children)}
-          </View>
+      {/* Web 端内容包裹容器：限制最大宽度，实现响应式布局 */}
+      <View style={webContentWrapperStyle}>
+        {/* 键盘避让：仅当外层使用 ScrollView 时启用，避免固定底部栏随键盘上移 */}
+        {useScrollContainer ? (
+          // 替换为 KeyboardAwareScrollView，移除原先的 KeyboardAvoidingView 包裹
+          // 因为 KeyboardAwareScrollView 已经内置了处理逻辑
+          <Container style={[styles.innerContainer, style]} {...containerProps}>
+            {children}
+          </Container>
         ) : (
-          <TouchableWithoutFeedback onPress={Keyboard.dismiss} disabled={Platform.OS === 'web'}>
+          // 页面自身已处理滚动，不启用全局键盘避让，保证固定底部栏不随键盘上移
+          childIsNativeScrollable ? (
             <View style={[styles.innerContainer, style]}>
-              {children}
+              {wrapScrollableWithKeyboardAvoid(children)}
             </View>
-          </TouchableWithoutFeedback>
-        )
-      )}
+          ) : (
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss} disabled={Platform.OS === 'web'}>
+              <View style={[styles.innerContainer, style]}>
+                {children}
+              </View>
+            </TouchableWithoutFeedback>
+          )
+        )}
+      </View>
     </View>
   );
 };

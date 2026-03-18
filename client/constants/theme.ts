@@ -1,31 +1,34 @@
 export const Colors = {
   light: {
-    textPrimary: "#1C1917",
-    textSecondary: "#78716c",
-    textMuted: "#9CA3AF",
-    primary: "#4F46E5", // Indigo-600 - 品牌主色，代表科技与智能
-    accent: "#8B5CF6", // Violet-500 - 辅助色，代表创造力
-    success: "#10B981", // Emerald-500
-    error: "#EF4444",
-    backgroundRoot: "#FAFAFA",
-    backgroundDefault: "#FFFFFF",
-    backgroundTertiary: "#F9FAFB", // 更浅的背景色，用于去线留白
+    // 黏土风格配色
+    textPrimary: "#2D2B3D", // 深紫灰
+    textSecondary: "#8B87A0", // 中灰紫
+    textMuted: "#A8A4B8", // 浅灰紫
+    primary: "#7C5CFC", // 黏土紫
+    accent: "#FF8FAB", // 黏土粉
+    success: "#5ED6A0", // 黏土绿
+    warning: "#FFCB57", // 黏土黄
+    error: "#FF6B8A", // 黏土红
+    backgroundRoot: "#F0EDFA", // 浅薰衣草灰
+    backgroundDefault: "#FFFFFF", // 纯白
+    backgroundTertiary: "#EDE8FF", // 淡紫背景
     buttonPrimaryText: "#FFFFFF",
-    tabIconSelected: "#4F46E5",
-    border: "#E5E7EB",
-    borderLight: "#F3F4F6",
+    tabIconSelected: "#7C5CFC",
+    border: "#E5E0F5",
+    borderLight: "#F0EDFA",
   },
   dark: {
     textPrimary: "#FAFAF9",
     textSecondary: "#A8A29E",
     textMuted: "#6F767E",
-    primary: "#818CF8", // Indigo-400 - 暗色模式品牌主色
-    accent: "#A78BFA", // Violet-400
+    primary: "#818CF8",
+    accent: "#A78BFA",
     success: "#34D399",
+    warning: "#FBBF24",
     error: "#F87171",
-    backgroundRoot: "#09090B", // 更深的背景色
+    backgroundRoot: "#09090B",
     backgroundDefault: "#1C1C1E",
-    backgroundTertiary: "#1F1F22", // 暗色模式去线留白背景
+    backgroundTertiary: "#1F1F22",
     buttonPrimaryText: "#09090B",
     tabIconSelected: "#818CF8",
     border: "#3F3F46",
@@ -79,98 +82,98 @@ export const Typography = {
   h1: {
     fontSize: 32,
     lineHeight: 40,
-    fontWeight: "700" as const,
+    fontWeight: "800" as const, // 黏土风格用更粗字重
   },
   h2: {
     fontSize: 28,
     lineHeight: 36,
-    fontWeight: "700" as const,
+    fontWeight: "800" as const,
   },
   h3: {
     fontSize: 24,
     lineHeight: 32,
-    fontWeight: "300" as const,
+    fontWeight: "700" as const,
   },
   h4: {
     fontSize: 20,
     lineHeight: 28,
-    fontWeight: "600" as const,
+    fontWeight: "700" as const,
   },
   title: {
     fontSize: 18,
     lineHeight: 24,
-    fontWeight: "700" as const,
+    fontWeight: "800" as const,
   },
   body: {
     fontSize: 16,
     lineHeight: 24,
-    fontWeight: "400" as const,
+    fontWeight: "500" as const,
   },
   bodyMedium: {
     fontSize: 16,
     lineHeight: 24,
-    fontWeight: "500" as const,
+    fontWeight: "600" as const,
   },
   small: {
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: "400" as const,
+    fontWeight: "500" as const,
   },
   smallMedium: {
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: "500" as const,
+    fontWeight: "600" as const,
   },
   caption: {
     fontSize: 12,
     lineHeight: 16,
-    fontWeight: "400" as const,
+    fontWeight: "500" as const,
   },
   captionMedium: {
     fontSize: 12,
     lineHeight: 16,
-    fontWeight: "500" as const,
+    fontWeight: "600" as const,
   },
   label: {
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: "500" as const,
+    fontWeight: "700" as const,
     letterSpacing: 2,
     textTransform: "uppercase" as const,
   },
   labelSmall: {
     fontSize: 12,
     lineHeight: 16,
-    fontWeight: "500" as const,
+    fontWeight: "700" as const,
     letterSpacing: 1,
     textTransform: "uppercase" as const,
   },
   labelTitle: {
     fontSize: 14,
     lineHeight: 20,
-    fontWeight: "700" as const,
+    fontWeight: "800" as const,
     letterSpacing: 2,
     textTransform: "uppercase" as const,
   },
   link: {
     fontSize: 16,
     lineHeight: 24,
-    fontWeight: "400" as const,
+    fontWeight: "500" as const,
   },
   stat: {
     fontSize: 30,
     lineHeight: 36,
-    fontWeight: "300" as const,
+    fontWeight: "700" as const,
   },
   tiny: {
     fontSize: 10,
     lineHeight: 14,
-    fontWeight: "400" as const,
+    fontWeight: "500" as const,
   },
   navLabel: {
-    fontSize: 10,
+    fontSize: 11,
     lineHeight: 14,
-    fontWeight: "500" as const,
+    fontWeight: "700" as const,
   },
 };
 

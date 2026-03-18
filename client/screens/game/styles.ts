@@ -1,0 +1,197 @@
+import { StyleSheet } from 'react-native';
+import { Spacing, BorderRadius, Theme } from '@/constants/theme';
+
+export const createStyles = (theme: Theme) => {
+  return StyleSheet.create({
+    scrollContent: {
+      flexGrow: 1,
+      paddingBottom: 100,
+    },
+    header: {
+      paddingHorizontal: Spacing.xl,
+      paddingTop: Spacing["2xl"],
+      paddingBottom: Spacing.lg,
+    },
+    title: {
+      fontSize: 28,
+      fontWeight: '800',
+      color: theme.textPrimary,
+    },
+    subtitle: {
+      fontSize: 14,
+      fontWeight: '500',
+      color: theme.textSecondary,
+      marginTop: 4,
+    },
+    statsCard: {
+      marginHorizontal: Spacing.xl,
+      marginTop: Spacing.lg,
+      borderRadius: BorderRadius["2xl"],
+      padding: 24,
+      backgroundColor: theme.backgroundDefault,
+      borderWidth: 1.5,
+      borderColor: 'rgba(255,255,255,0.7)',
+      shadowColor: theme.primary,
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.15,
+      shadowRadius: 20,
+      elevation: 6,
+    },
+    statsRow: {
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+    },
+    statItem: {
+      alignItems: 'center',
+    },
+    statIcon: {
+      width: 48,
+      height: 48,
+      borderRadius: 16,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: Spacing.sm,
+      backgroundColor: '#EDE8FF',
+      borderWidth: 1.5,
+      borderColor: 'rgba(255,255,255,0.7)',
+      shadowColor: theme.primary,
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.15,
+      shadowRadius: 8,
+      elevation: 3,
+    },
+    statValue: {
+      fontSize: 24,
+      fontWeight: '800',
+      color: theme.textPrimary,
+    },
+    statLabel: {
+      fontSize: 12,
+      fontWeight: '600',
+      color: theme.textSecondary,
+      marginTop: 2,
+    },
+    sectionHeader: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingHorizontal: Spacing.xl,
+      marginTop: Spacing["2xl"],
+      marginBottom: Spacing.lg,
+    },
+    sectionTitle: {
+      fontSize: 18,
+      fontWeight: '800',
+      color: theme.textPrimary,
+    },
+    levelList: {
+      paddingHorizontal: Spacing.xl,
+    },
+    levelCard: {
+      borderRadius: BorderRadius["2xl"],
+      padding: 20,
+      marginBottom: Spacing.lg,
+      backgroundColor: theme.backgroundDefault,
+      borderWidth: 1.5,
+      borderColor: 'rgba(255,255,255,0.7)',
+      shadowColor: theme.primary,
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.15,
+      shadowRadius: 20,
+      elevation: 6,
+    },
+    levelCardLocked: {
+      opacity: 0.6,
+    },
+    levelHeader: {
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    levelIcon: {
+      width: 56,
+      height: 56,
+      borderRadius: 20,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginRight: Spacing.lg,
+      backgroundColor: '#EDE8FF',
+      borderWidth: 1.5,
+      borderColor: 'rgba(255,255,255,0.7)',
+    },
+    levelInfo: {
+      flex: 1,
+    },
+    levelName: {
+      fontSize: 18,
+      fontWeight: '800',
+      color: theme.textPrimary,
+    },
+    levelDesc: {
+      fontSize: 13,
+      fontWeight: '500',
+      color: theme.textSecondary,
+      marginTop: 4,
+    },
+    levelStatus: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginTop: Spacing.md,
+    },
+    starsContainer: {
+      flexDirection: 'row',
+      marginRight: Spacing.lg,
+    },
+    progressBadge: {
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+      borderRadius: BorderRadius.xl,
+      backgroundColor: theme.backgroundTertiary,
+    },
+    progressBadgeComplete: {
+      backgroundColor: '#E0F8EC',
+    },
+    progressText: {
+      fontSize: 12,
+      fontWeight: '700',
+      color: theme.textPrimary,
+    },
+    progressTextComplete: {
+      color: theme.success,
+    },
+    lockedBadge: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      paddingHorizontal: 12,
+      paddingVertical: 6,
+      borderRadius: BorderRadius.xl,
+      backgroundColor: theme.border,
+    },
+    lockedText: {
+      fontSize: 12,
+      fontWeight: '700',
+      color: theme.textMuted,
+      marginLeft: 4,
+    },
+    levelReward: {
+      marginTop: Spacing.md,
+      paddingVertical: Spacing.sm,
+      paddingHorizontal: Spacing.md,
+      borderRadius: BorderRadius.lg,
+      backgroundColor: '#FFF4DD',
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    rewardText: {
+      fontSize: 12,
+      fontWeight: '700',
+      color: '#B45309',
+      marginLeft: 6,
+    },
+    loadingContainer: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 60,
+    },
+  });
+};

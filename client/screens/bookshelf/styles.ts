@@ -1,0 +1,211 @@
+import { StyleSheet } from 'react-native';
+import { Spacing, BorderRadius, Theme } from '@/constants/theme';
+
+export const createStyles = (theme: Theme) => {
+  return StyleSheet.create({
+    scrollContent: {
+      flexGrow: 1,
+      paddingBottom: 100,
+    },
+    header: {
+      paddingHorizontal: Spacing.xl,
+      paddingTop: Spacing["2xl"],
+      paddingBottom: Spacing.lg,
+    },
+    greeting: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginBottom: Spacing.sm,
+    },
+    greetingText: {
+      fontSize: 14,
+      fontWeight: '700',
+      color: theme.textSecondary,
+    },
+    title: {
+      fontSize: 28,
+      fontWeight: '800',
+      color: theme.textPrimary,
+    },
+    heroCard: {
+      marginHorizontal: Spacing.xl,
+      marginTop: Spacing.lg,
+      borderRadius: BorderRadius["3xl"],
+      paddingVertical: 32,
+      paddingHorizontal: 24,
+      alignItems: 'center',
+      backgroundColor: theme.primary,
+      borderWidth: 1.5,
+      borderColor: 'rgba(255,255,255,0.25)',
+      shadowColor: '#5A3ED9',
+      shadowOffset: { width: 0, height: 12 },
+      shadowOpacity: 0.35,
+      shadowRadius: 24,
+      elevation: 10,
+    },
+    heroBadge: {
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    heroBadgeText: {
+      color: theme.warning,
+      fontSize: 13,
+      fontWeight: '800',
+      letterSpacing: 1,
+      marginLeft: 4,
+    },
+    heroTitle: {
+      color: '#FFFFFF',
+      fontSize: 24,
+      fontWeight: '800',
+      marginTop: 12,
+      textAlign: 'center',
+    },
+    heroSubtitle: {
+      color: 'rgba(255,255,255,0.7)',
+      fontSize: 14,
+      fontWeight: '500',
+      marginTop: 8,
+    },
+    levelTabs: {
+      paddingHorizontal: Spacing.xl,
+      marginTop: Spacing["2xl"],
+    },
+    levelTabsLabel: {
+      fontSize: 14,
+      fontWeight: '700',
+      color: theme.textSecondary,
+      marginBottom: Spacing.md,
+    },
+    levelTabsScroll: {
+      flexDirection: 'row',
+    },
+    levelTab: {
+      paddingHorizontal: 20,
+      paddingVertical: 10,
+      borderRadius: BorderRadius.xl,
+      marginRight: Spacing.md,
+      backgroundColor: theme.backgroundDefault,
+      borderWidth: 1.5,
+      borderColor: 'rgba(255,255,255,0.7)',
+      shadowColor: theme.primary,
+      shadowOffset: { width: 0, height: 4 },
+      shadowOpacity: 0.12,
+      shadowRadius: 8,
+      elevation: 3,
+    },
+    levelTabActive: {
+      backgroundColor: theme.primary,
+      borderColor: 'rgba(255,255,255,0.3)',
+      shadowOpacity: 0.25,
+    },
+    levelTabText: {
+      fontSize: 14,
+      fontWeight: '700',
+      color: theme.textPrimary,
+    },
+    levelTabTextActive: {
+      color: '#FFFFFF',
+    },
+    sectionHeader: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      paddingHorizontal: Spacing.xl,
+      marginTop: Spacing["2xl"],
+      marginBottom: Spacing.lg,
+    },
+    sectionTitle: {
+      fontSize: 18,
+      fontWeight: '800',
+      color: theme.textPrimary,
+    },
+    viewAll: {
+      fontSize: 13,
+      fontWeight: '600',
+      color: theme.primary,
+    },
+    bookGrid: {
+      paddingHorizontal: Spacing.xl,
+    },
+    bookCard: {
+      width: 140,
+      marginRight: Spacing.lg,
+      borderRadius: BorderRadius["2xl"],
+      backgroundColor: theme.backgroundDefault,
+      borderWidth: 1.5,
+      borderColor: 'rgba(255,255,255,0.7)',
+      shadowColor: theme.primary,
+      shadowOffset: { width: 0, height: 8 },
+      shadowOpacity: 0.15,
+      shadowRadius: 20,
+      elevation: 6,
+      overflow: 'hidden',
+    },
+    bookCover: {
+      width: '100%',
+      height: 180,
+      backgroundColor: theme.backgroundTertiary,
+    },
+    bookInfo: {
+      padding: Spacing.md,
+    },
+    bookTitle: {
+      fontSize: 14,
+      fontWeight: '700',
+      color: theme.textPrimary,
+      marginBottom: 4,
+    },
+    bookLevel: {
+      fontSize: 11,
+      fontWeight: '600',
+      color: theme.textSecondary,
+    },
+    bookProgress: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginTop: Spacing.sm,
+    },
+    progressBar: {
+      flex: 1,
+      height: 4,
+      borderRadius: 2,
+      backgroundColor: theme.border,
+      marginRight: Spacing.sm,
+    },
+    progressFill: {
+      height: '100%',
+      borderRadius: 2,
+      backgroundColor: theme.success,
+    },
+    progressText: {
+      fontSize: 10,
+      fontWeight: '600',
+      color: theme.success,
+    },
+    emptyContainer: {
+      alignItems: 'center',
+      paddingVertical: 60,
+    },
+    emptyIcon: {
+      width: 80,
+      height: 80,
+      borderRadius: 40,
+      backgroundColor: theme.backgroundTertiary,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: Spacing.lg,
+    },
+    emptyText: {
+      fontSize: 16,
+      fontWeight: '600',
+      color: theme.textSecondary,
+    },
+    loadingContainer: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 60,
+    },
+  });
+};

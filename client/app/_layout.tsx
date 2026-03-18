@@ -25,6 +25,8 @@ export default function RootLayout() {
           }}>
             <Stack.Screen name="(tabs)" options={{ title: "" }} />
             <Stack.Screen name="reader" options={{ title: "阅读" }} />
+            <Stack.Screen name="baidu-bind" options={{ title: "绑定百度网盘" }} />
+            <Stack.Screen name="resource-manager" options={{ title: "资源管理" }} />
           </Stack>
           <Toast />
         </GestureHandlerRootView>

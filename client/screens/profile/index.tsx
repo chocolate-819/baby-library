@@ -88,7 +88,16 @@ export default function ProfileScreen() {
       color: '#7C5CFC',
       bgColor: '#EDE8FF',
       onPress: () => {
-        // TODO: 导航到百度网盘绑定页面
+        router.push('/baidu-bind');
+      },
+    },
+    {
+      icon: 'folder-open',
+      label: '资源管理',
+      color: '#FF8FAB',
+      bgColor: '#FFE8EE',
+      onPress: () => {
+        router.push('/resource-manager');
       },
     },
     {

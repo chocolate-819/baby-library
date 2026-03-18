@@ -1,11 +1,35 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
 build/
 .expo/
 .expo-shared/
+
+# Environment files (敏感信息，不要提交！)
+.env
+.env.local
+.env.*.local
+server/.env
+
+# Cache
 .eslintcache
 expo/expo-env.d.ts
 expo-env.d.ts
-.DS_Store
-logs/
 *.tsbuildinfo
+
+# OS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+
+# Private config
+.coze
+.cozeproj

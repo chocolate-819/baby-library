@@ -1,74 +1,53 @@
-# Expo App + Express.js
+# Vertex AI Studio Frontend App with Node.js Backend
 
-## 目录结构规范（严格遵循）
+This repository contains a frontend and a Node.js backend, designed to run together.
+The backend acts as a proxy, handling Google Cloud API calls.
 
-当前仓库是一个 monorepo（基于 pnpm 的 workspace）
+This project is intended for demonstration and prototyping purposes only.
+It is not intended for use in a production environment.
 
-- Expo 代码在 client 目录，Express.js 代码在 server 目录
-- 本模板默认无 Tab Bar，可按需改造
+## Prerequisites
 
-目录结构说明
+To run this application locally, you need:
 
-├── server/                     # 服务端代码根目录 (Express.js)
-|   ├── src/
-│   │   └── index.ts            # Express 入口文件
-|   └── package.json            # 服务端 package.json
-├── client/                     # React Native 前端代码
-│   ├── app/                    # Expo Router 路由目录（仅路由配置）
-│   │   ├── _layout.tsx         # 根布局文件（必需，务必阅读）
-│   │   ├── home.tsx            # 首页
-│   │   └── index.tsx           # re-export home.tsx
-│   ├── screens/                # 页面实现目录（与 app/ 路由对应）
-│   │   └── demo/               # demo 示例页面
-│   │       ├── index.tsx       # 页面组件实现
-│   │       └── styles.ts       # 页面样式
-│   ├── components/             # 可复用组件
-│   │   └── Screen.tsx          # 页面容器组件（必用）
-│   ├── hooks/                  # 自定义 Hooks
-│   ├── contexts/               # React Context 代码
-│   ├── constants/              # 常量定义（如主题配置）
-│   ├── utils/                  # 工具函数
-│   ├── assets/                 # 静态资源
-|   └── package.json            # Expo 应用 package.json
-├── package.json
-├── .cozeproj                   # 预置脚手架脚本（禁止修改）
-└── .coze                       # 配置文件（禁止修改）
+*   **[Google Cloud SDK / gcloud CLI](https://cloud.google.com/sdk/docs/install)**: Follow the instructions to install the SDK.
 
-## 安装依赖
+*   **gcloud Initialization**:
+    *   Initialize the gcloud CLI:
+        ```bash
+        gcloud init
+        ```
+    *   Authenticate for Application Default Credentials (needed to call Google Cloud APIs):
+        ```bash
+        gcloud auth application-default login
+        ```
 
-### 命令
+*   **Node.js and npm**: Ensure you have Node.js and its package manager, `npm`, installed on your machine.
 
-```bash
-pnpm i
-```
+## Project Structure
 
-### 新增依赖约束
+The project is organized into two main directories:
 
-如果需要新增依赖，需在 client 和 server 各自的目录添加（原因：隔离前后端的依赖），禁止在根目录直接安装依赖
+*   `frontend/`: Contains the Frontend application code.
+*   `backend/`: Contains the Node.js/Express server code to proxy Google Cloud API calls.
 
-### 新增依赖标准流程
+## Backend Environment Variables
 
-- 编辑 `client/package.json` 或 `server/package.json`
-- 在根目录执行 `pnpm i`
+The `backend/.env.local` file is automatically generated when you download this application.
+It contains essential Google Cloud environment variables pre-configured based on your project settings at the time of download.
 
-## Expo 开发规范
+The variables set in `backend/.env.local` are:
+*   `API_BACKEND_PORT`: The port the backend API server listens on (e.g., `5000`).
+*   `API_PAYLOAD_MAX_SIZE`: The maximum size of the request payload accepted by the backend server (e.g., `5mb`).
+*   `GOOGLE_CLOUD_LOCATION`: The Google Cloud region associated with your project.
+*   `GOOGLE_CLOUD_PROJECT`: Your Google Cloud Project ID.
 
-### 路径别名
+**Note:** These variables are automatically populated during the download process.
+You can modify the values in `backend/.env.local` if you need to change them.
 
-Expo 配置了 `@/` 路径别名指向 `client/` 目录：
+## Installation and Running the App
 
-```tsx
-// 正确
-import { Screen } from '@/components/Screen';
-
-// 避免相对路径
-import { Screen } from '../../../components/Screen';
-```
-
-## 本地开发
-
-运行 coze dev 可以同时启动前端和后端服务，如果端口已占用，该命令会先杀掉占用端口的进程再启动，也可以用来重启前端和后端服务
+To install dependencies and run your Google Cloud Vertex AI Studio App locally, execute the following command:
 
 ```bash
-coze dev
-```
+npm install && npm run dev

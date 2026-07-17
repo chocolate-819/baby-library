@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>拼豆管家 Pro</title>
+    
+    <!-- PWA Meta Tags for iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="拼豆管家">
+    <!-- Cute Pixel Art Cat Icon -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 192 192%22><rect width=%22192%22 height=%22192%22 rx=%2240%22 fill=%22%23fdf2f8%22/><g transform=%22translate(36, 36) scale(10)%22><rect x=%221%22 y=%221%22 width=%222%22 height=%222%22 fill=%22%23ec4899%22/><rect x=%229%22 y=%221%22 width=%222%22 height=%222%22 fill=%22%23ec4899%22/><rect x=%221%22 y=%223%22 width=%2210%22 height=%226%22 fill=%22%23ec4899%22/><rect x=%222%22 y=%229%22 width=%228%22 height=%222%22 fill=%22%23ec4899%22/><rect x=%223%22 y=%225%22 width=%222%22 height=%222%22 fill=%22%23ffffff%22/><rect x=%227%22 y=%225%22 width=%222%22 height=%222%22 fill=%22%23ffffff%22/><rect x=%224%22 y=%226%22 width=%221%22 height=%221%22 fill=%22%23000000%22/><rect x=%228%22 y=%226%22 width=%221%22 height=%221%22 fill=%22%23000000%22/><rect x=%225%22 y=%227%22 width=%222%22 height=%221%22 fill=%22%23fbcfe8%22/></g></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+        <style>
+        body {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+            -webkit-tap-highlight-color: transparent;
+            /* Prevent pull-to-refresh on iOS */
+            overscroll-behavior-y: none;
+        }
+        /* Custom scrollbar for desktop */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 3px;
+        }
+        /* Hide scrollbar utility for mobile horizontal lists */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.js"></script></body>
+</html>
